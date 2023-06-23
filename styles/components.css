@@ -194,6 +194,26 @@
   text-underline-offset: 0.4rem;
 }
 
+.menue-button {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s 1s;
+}
+
+.menue-button[data-state=active] {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  display: block;
+  padding: var(--s) var(--s);
+  background-color: var(--lightest);
+  opacity: 1;
+}
+
+.menue-button img {
+  width: auto;
+}
+
 @media screen and (min-width: 840px) {
   .navbar {
     position: sticky;
@@ -213,6 +233,11 @@
     margin-right: 0;
     margin-left: auto;
   }
+
+  .menue-button {
+    display: none;
+  }
+
 }
 
 /* Intern Nav (Page Navigation)
@@ -436,3 +461,5 @@ form input[type="checkbox"] {
     flex-grow: 1;
   }
 }
+
+
