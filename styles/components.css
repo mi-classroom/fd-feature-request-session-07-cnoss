@@ -202,12 +202,12 @@
   top: 0;
   display: block;
   padding: var(--xs) var(--s);
-  background-color: var(--lightest);
+  background-color: var(--lighten);
   opacity: 1;
 }
 
 .menue-button img {
-  width: auto;
+  width: 44px;
 }
 
 @media screen and (min-width: 840px) {
