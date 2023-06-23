@@ -17,8 +17,7 @@ navigationElements.forEach((element) => {
 // Create an IntersectionObserver
 const observer = new IntersectionObserver(
   (entries) => {
-    
-    
+
     entries.forEach((entry) => {
 
       const targetId = entry.target.getAttribute("id");
