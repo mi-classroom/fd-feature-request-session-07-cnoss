@@ -129,10 +129,6 @@
   text-align: left;
 }
 
-.ingredients td {
-  padding-right: 6rem;
-}
-
 .ingredients td:last-child {
   border-right: none;
 }
