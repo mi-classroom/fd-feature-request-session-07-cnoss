@@ -17,10 +17,22 @@ navigationElements.forEach((element) => {
 // Create an IntersectionObserver
 const observer = new IntersectionObserver(
   (entries) => {
+    
+    
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const targetId = entry.target.getAttribute("id");
 
+      const targetId = entry.target.getAttribute("id");
+
+      if(targetId === 'main-navigation'){
+        if (entry.isIntersecting) {
+          menueButton.removeAttribute("data-state");
+        }else{
+          menueButton.setAttribute("data-state", "active");
+        }
+      }
+
+      if (entry.isIntersecting) {
+        
         // Update 'data-state' attribute for navigation elements based on the intersecting section
         navigationElements.forEach((element) => {
           const elementHref = element.getAttribute("href").substring(1);
@@ -41,8 +53,14 @@ const observer = new IntersectionObserver(
 
 // Select all sections with 'id' attribute
 const sections = document.querySelectorAll("main > *");
+const menue = document.querySelector("[data-js-menue]");
+const menueButton = document.querySelector("[data-js-menue-button]");
+const allNodes = [...sections, menue];
 
 // Observe each section for intersection
-sections.forEach((section) => {
-  observer.observe(section);
+allNodes.forEach((item) => {
+  observer.observe(item);
 });
+
+
+

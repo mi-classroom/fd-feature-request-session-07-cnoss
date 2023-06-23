@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <header class="navbar">
+    <header class="navbar" data-js-menue id="main-navigation">
         <nav>
             <ul>
                 <li><a class="is-active" href="../recipes/spaghetti-aglio-olio-e-peperoncino.html">Rezepte</a></li>
@@ -31,6 +31,10 @@
             </ul>
         </nav>
     </header>
+
+    <div class="menue-button" data-js-menue-button>
+        <a href="#main-navigation"><img src="../icons/menue.svg" alt="Menue Icon"></a>
+    </div>
 
     <main>
         <nav data-intern-nav class="intern-nav">
@@ -146,9 +150,10 @@
                     </dl>
                 </section>
             </div>
+            <hr>
         </section>
 
-        <section id="rezept">
+        <section id="rezept" data-demo="rezept">
             <h2>Rezept</h2>
             <ol class="steps">
                 <li>
