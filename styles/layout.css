@@ -2,12 +2,12 @@
 ########################################################################## */
 
 .grid {
-    display: grid;
-    gap: var(--m);
+  display: grid;
+  gap: var(--m);
 }
 
 @media screen and (min-width: 840px) {
-    .grid[data-columns='2'] {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .grid[data-columns='2'] {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
