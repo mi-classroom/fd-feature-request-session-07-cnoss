@@ -201,7 +201,7 @@
   z-index: 100;
   top: 0;
   display: block;
-  padding: var(--s) var(--s);
+  padding: var(--xs) var(--s);
   background-color: var(--lightest);
   opacity: 1;
 }
