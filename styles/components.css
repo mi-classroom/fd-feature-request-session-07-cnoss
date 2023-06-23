@@ -66,7 +66,7 @@
     text-underline-offset: 0.4rem;
 }
 
-.hero-content{
+.hero-content {
     max-width: var(--max-width-content);
     padding: var(--xl) var(--l) var(--xxl);
     padding-right: calc(10vw * 1.5);
@@ -93,7 +93,7 @@
     margin: var(--spacing-margin-medium) 0 0;
 }
 
-.catcher h1{
+.catcher h1 {
     max-width: 90%;
 }
 
@@ -143,9 +143,14 @@
 /* Nutritional Values
 ############################################################################ */
 
-.nutritional-values{
+.nutritional-values {
     width: 100%;
-    text-align: center;
+}
+
+@media screen and (min-width: 840px) {
+    .nutritional-values {
+        text-align: center;
+    }
 }
 
 .nutritional-values dl {
@@ -169,16 +174,14 @@
 ############################################################################ */
 
 .navbar {
-    position: sticky;
-    z-index: 1;
-    top: 0;
     width: 100%;
-    padding: var(--spacing-margin-medium) var(--spacing-padding);
+    padding: var(--s);
     background: var(--secondary);
 }
 
 .navbar ul {
     display: flex;
+    flex-direction: column;
     width: 100%;
     justify-content: space-between;
     padding: 0;
@@ -189,26 +192,38 @@
     text-decoration: none;
 }
 
-.navbar ul li:not(:last-child) {
-    margin-right: var(--spacing-margin-large);
-}
-
-.navbar ul li:last-child {
-    margin-right: 0;
-    margin-left: auto;
-}
-
 /* navbar link highlight */
 .navbar a.is-active {
     text-decoration: underline;
     text-underline-offset: 0.4rem;
 }
 
+@media screen and (min-width: 840px) {
+
+    .navbar {
+        position: sticky;
+        z-index: 1;
+        top: 0;
+    }
+
+    .navbar ul {
+        flex-direction: row;
+    }
+
+    .navbar ul li:not(:last-child) {
+        margin-right: var(--spacing-margin-large);
+    }
+
+    .navbar ul li:last-child {
+        margin-right: 0;
+        margin-left: auto;
+    }
+}
+
 /* Intern Nav (Page Navigation)
 ############################################################################ */
 
 .intern-nav {
-    position: fixed;
     z-index: 1;
     right: 0;
     margin-top: 0;
@@ -218,6 +233,7 @@
 .intern-nav ul {
     padding: 1rem;
     list-style: none;
+    margin: 0;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
@@ -231,14 +247,19 @@
 
 .intern-nav ul li a[data-state="active"] {
     text-decoration: underline;
-    text-underline-offset: 0.2rem;}
+    text-underline-offset: 0.2rem;
+}
 
-
+@media screen and (min-width: 840px) {
+    .intern-nav {
+        position: fixed;
+    }
+}
 
 /* Quantiy Selector
 ############################################################################ */
 
-.quantity-selector-head{
+.quantity-selector-head {
     max-width: var(--max-width-content);
     color: var(--darkest);
     font-family: var(--font-family-sans-serif);
@@ -256,22 +277,10 @@
 /* Form
 ############################################################################ */
 
-form {
-    display: flex;
-    width: fit-content;
-    flex-direction: column;
-}
-
 form input {
     padding: var(--s) var(--m);
     margin-bottom: var(--l);
-    
-}
 
-.form-container {
-    display: flex;
-    flex-direction: row;
-    gap: var(--m);
 }
 
 form button {
@@ -282,13 +291,31 @@ form button {
     outline: none;
 }
 
-.form-container button:last-child{
+.form-container > *{
+    width: 100%;
+}
+
+.form-container button{
+    margin-bottom: var(--xs);
+    flex-grow: 1;
+}
+
+.form-container button:last-child {
     background-color: var(--accent-lighter);
 }
 
-.form-container .input-container {
-    display: flex;
-    flex-direction: column;
+.form-container .input-container>* {
+    display: block;
+    width: 100%;
+}
+
+
+@media screen and (min-width: 840px) {
+    .form-container {
+        display: flex;
+        flex-direction: row;
+        gap: var(--m);
+    }
 }
 
 textarea {
@@ -326,7 +353,7 @@ form input[type="checkbox"] {
     padding: var(--l);
 }
 
-.comments h3{
+.comments h3 {
     margin-top: var(--xl);
     margin-bottom: var(--l);
 }
@@ -356,46 +383,37 @@ form input[type="checkbox"] {
 /* Steps
 ############################################################################ */
 
-.steps{
+.steps {
     padding: 0;
     counter-reset: step-count;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
-.steps > li{
+.steps>li {
     display: block;
     padding-bottom: var(--xl);
     counter-increment: step-count;
 }
 
-.steps > li.is-text-only{
+.steps>li.is-text-only {
     display: flex;
     justify-content: center;
 }
 
-.steps > li.is-text-only p{
+.steps>li.is-text-only p {
     max-width: calc(var(--max-width-content) * 0.5);
 }
 
-.steps > li figure{
+.steps>li figure {
     display: flex;
-    width: auto;
+    flex-direction: column;
+    width: 100%;
     align-items: center;
     margin: 0;
     gap: var(--m);
 }
 
-.steps > li figure > *{
-    width: 50%;
-    flex-basis: 50%;
-    flex-grow: 1;
-}
-
-.steps .is-reversed{
-    flex-direction: row-reverse;
-}
-
-.steps .has-counter{
+.steps .has-counter {
     position: relative;
     padding-top: 0;
     margin-left: var(--xl);
@@ -411,3 +429,21 @@ form input[type="checkbox"] {
     line-height: var(--xl);
 }
 
+@media screen and (min-width: 840px) {
+
+    .steps>li figure {
+        flex-direction: row;
+        width: auto;
+    }
+
+    .steps .is-reversed {
+        flex-direction: row-reverse;
+    }
+
+    .steps>li figure>* {
+        width: 50%;
+        flex-basis: 50%;
+        flex-grow: 1;
+    }
+
+}

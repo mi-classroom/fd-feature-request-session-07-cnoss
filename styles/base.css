@@ -38,7 +38,8 @@ h2 + h3{
 hr {
     border: none;
     border-top: 2px solid #d9d9d9;
-    margin: var(--spacing-margin-large) 0;
+    margin: calc(var(--m) + 8vw) calc(var(--m) + 3vw);
+    margin-bottom: calc(var(--m) + 8vw - var(--l));
 }
 
 p {
@@ -69,7 +70,7 @@ main > article:not(.hero),
 main > div,
 main > section:not(.hero){
     max-width: var(--max-width-content);
-    padding: var(--l);
+    padding: var(--s);
     margin: auto;
 }
 
@@ -86,8 +87,7 @@ article a {
 }
 
 section h2,
-article:not([class]) h2
- {
+article:not([class]) h2 {
     color: var(--accent);
     font-family: var(--font-family-serif);
     font-size: 1.3rem;
@@ -101,15 +101,15 @@ section:not([class]) h3 {
     font-weight: var(--font-weight-bold);
 }
 
-article:not([class]) figure,
-section:not([class]) figure {
-    width: 80%;
-    margin-left: 10%;
+@media screen and (min-width: 840px) {
+    article:not([class]) figure,
+    section:not([class]) figure {
+        width: 80%;
+        margin-left: 10%;
+    }
 }
 
 article:not([class]) hr,
 section:not([class]) hr {
-    width: 50%;
     border-top: 2px solid var(--accent-lighter);
-    margin-left: 25%;
 }

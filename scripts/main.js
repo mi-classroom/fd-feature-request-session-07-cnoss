@@ -17,10 +17,10 @@ navigationElements.forEach((element) => {
 // Create an IntersectionObserver
 const observer = new IntersectionObserver(
   (entries) => {
+    
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const targetId = entry.target.getAttribute("id");
-
         // Update 'data-state' attribute for navigation elements based on the intersecting section
         navigationElements.forEach((element) => {
           const elementHref = element.getAttribute("href").substring(1);
