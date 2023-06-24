@@ -201,13 +201,13 @@
   z-index: 100;
   top: 0;
   display: block;
-  padding: var(--xs) var(--s);
+  padding: var(--xs) var(--xs);
   background-color: var(--lighten);
   opacity: 1;
 }
 
 .menue-button img {
-  width: 44px;
+  width: 40px;
 }
 
 @media screen and (min-width: 840px) {
